@@ -244,7 +244,7 @@
     .contact-form-container form button {
       width: 100%;
       padding: 12px;
-      background-color: #FFC107;
+      background-color: #25D366;
       border: none;
       border-radius: 5px;
       color: white;
@@ -497,6 +497,27 @@
     modal.show();
   }
 </script>
-
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevenir el envío del formulario
+    
+    const name = document.getElementById('userName').value;
+    const email = document.getElementById('userEmail').value;
+    const message = document.getElementById('userMessage').value;
+    
+    // Crear el mensaje predefinido
+    const whatsappMessage = Hola,%20me%20interesa%20más%20información%20de%20la%20parroquia.%0A%0ANombre:%20${encodeURIComponent(name)}%0ACorreo:%20${encodeURIComponent(email)}%0AMensaje:%20${encodeURIComponent(message)};
+    
+    // Número de teléfono de WhatsApp (sin + y con el código de país)
+    const whatsappNumber = '529969633309'; // Ejemplo de número con código de país
+    
+    // Crear el enlace de WhatsApp
+    const whatsappLink = https://wa.me/${whatsappNumber}?text=${whatsappMessage};
+    
+    // Redirigir al enlace de WhatsApp
+    window.open(whatsappLink, '_blank');
+  });
+</script>
+  
 </body>
 </html>
