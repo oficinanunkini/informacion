@@ -428,25 +428,28 @@
     currentTab = tabName;
   }
 
-  // Función para abrir el modal con carrusel
+  // Lista de imágenes en la carpeta './IMG/'
   const images = [
-    'https://via.placeholder.com/500',
-    'https://via.placeholder.com/500',
-    'https://via.placeholder.com/500',
+    './IMG/bau.jpg',
+    './IMG/actu.jpg',
+    './IMG/conf.jpg',
+    './IMG/mat.jpg',
+    './IMG/pcom.jpg'
   ];
 
+  // Función para abrir el modal con carrusel
   function openModal(index) {
     const carouselItems = document.getElementById('carouselItems');
-    carouselItems.innerHTML = '';
+    carouselItems.innerHTML = ''; // Limpiar el contenido previo del carrusel
 
     images.forEach((src, i) => {
-      const itemClass = i === index ? 'carousel-item active' : 'carousel-item';
+      const itemClass = i === index ? 'carousel-item active' : 'carousel-item'; // Establecer "active" solo para la imagen seleccionada
       const itemHTML = `
         <div class="${itemClass}">
           <img src="${src}" class="d-block w-100" alt="Image ${i + 1}">
         </div>
       `;
-      carouselItems.innerHTML += itemHTML;
+      carouselItems.innerHTML += itemHTML; // Añadir las imágenes dinámicamente
     });
 
     // Mostrar el modal
@@ -454,6 +457,7 @@
     modal.show();
   }
 </script>
+
 
 </body>
 </html>
