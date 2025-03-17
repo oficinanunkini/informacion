@@ -256,28 +256,7 @@
     .contact-form-container form button:hover {
       background-color: #e0a800;
     }
-     #whatsappButton {
-    background-color: #25D366; /* Verde de WhatsApp */
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    width: 100%; /* Si deseas que ocupe todo el ancho del formulario */
-    transition: background-color 0.3s ease;
-  }
-
-  #whatsappButton:hover {
-    background-color: #128C7E; /* Color más oscuro al pasar el mouse */
-  }
-
-  #whatsappButton i {
-    margin-right: 10px; /* Espacio entre el icono y el texto */
-  }
+    
   </style>
 </head>
 <body>
@@ -517,28 +496,6 @@
     const modal = new bootstrap.Modal(document.getElementById('imageModal'));
     modal.show();
   }
-</script>
-
-  <script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevenir el envío del formulario
-    
-    const name = document.getElementById('userName').value;
-    const email = document.getElementById('userEmail').value;
-    const message = document.getElementById('userMessage').value;
-    
-    // Crear el mensaje predefinido
-    const whatsappMessage = `Hola,%20me%20interesa%20más%20información%20de%20la%20parroquia.%0A%0ANombre:%20${encodeURIComponent(name)}%0ACorreo:%20${encodeURIComponent(email)}%0AMensaje:%20${encodeURIComponent(message)}`;
-    
-    // Número de teléfono de WhatsApp (sin + y con el código de país)
-    const whatsappNumber = '529969633309'; // Ejemplo de número con código de país
-    
-    // Crear el enlace de WhatsApp
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-    
-    // Redirigir al enlace de WhatsApp
-    window.open(whatsappLink, '_blank');
-  });
 </script>
 
 </body>
